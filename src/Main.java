@@ -24,7 +24,7 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
-    public static final String PHONE_NOT_EXIST = "Phone number does no exists.";
+    public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
     public static final String ALL_CONTACTS_DIFF = "All contacts have different phone numbers";
     public static final String NOT_ALL_CONTACTS_DIFF = "There are contacts that share phone numbers.";
     public static final String QUIT_MSG = "Goodbye!";
@@ -159,7 +159,10 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
     private static void getNumber(Scanner in, ContactBook cBook) {
-
+        int number = in.nextInt(); in.nextLine();
+        if (cBook.getNameWithPhone(number) != null)
+            System.out.println(cBook.getNameWithPhone(number));
+        else System.out.println(PHONE_NOT_EXIST);
     }
 
     private static void checkAllContacts(ContactBook cBook) {
