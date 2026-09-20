@@ -62,9 +62,10 @@ public class ContactBook {
 
     //Pre: phone != null
     public String getNameWithPhone (int phone) {
-        for (int i=0; i<counter; i++)
+        for (int i=0; i<counter; i++) {
             if (contacts[i].getPhone() == phone)
                 return contacts[i].getName();
+        }
         return null;
     }
 
@@ -100,7 +101,4 @@ public class ContactBook {
     public Contact next() {
         return contacts[currentContact++];
     }
-
-
-
 }
